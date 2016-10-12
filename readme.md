@@ -8,15 +8,9 @@
 do one thing and do it well - and you don't know all about it!
 ```
 
-## Resources
-
-- [dealing with problematic dependencies in a restricted network environment](http://blog.npmjs.org/post/145724408060/dealing-with-problematic-dependencies-in-a)
-
 ## package.json
 
-This is the most important file where all the configuration happens. That said this is also the place where you can mess things up like accidentaly puplishing private data or something like that. So take 10min and read it carefully before going any further.
-
-<https://docs.npmjs.com/files/package.json>
+This is the most important file where all the configuration happens. That said this is also the place where you can mess things up. Take 10 min and read about the basics here: <https://docs.npmjs.com/files/package.json>
 
 ## npm shortcuts
 
@@ -60,6 +54,39 @@ You can specify which operating systems your module will run on:
 
 It is allowed to both blacklist, and whitelist, although there isn't any good reason to do this.
 
+## Setup the Enviroment Variables
+
+- [GitHub Token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/)
+- [npm Token](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules)
+
+## Continious Integration
+
+- [travis-ci](https://github.com/travis-ci/travis.rb) - Travis CI Client (CLI and Ruby library)
+- [travis encrypt secrets](https://docs.travis-ci.com/user/encryption-keys/)
+- [travis-repository-settings](https://blog.travis-ci.com/2014-03-05-repository-settings/)
+
+## CLI Apps
+
+link your files in the `package.json` to run them directly:
+
+`{ "bin" : { "mycli" : "./cli.js" } }`
+
+[preferglobal](https://docs.npmjs.com/files/package.json#preferglobal)
+
+`preferglobal: true`
+
+don't forget to set a shebang
+
+`!/usr/bin/env node`
+
+<https://docs.npmjs.com/files/package.json#bin>
+
+## Production Mode
+
+`npm config set -g production false`
+
+With the --production flag (or when the NODE_ENV environment variable is set to production), npm will not install modules listed in devDependencies.
+
 ## Semantic Versioning
 
 - <http://semver.org/> - Semantic Versioning Explained
@@ -90,7 +117,7 @@ Tip 2: `pre`Hooks für scripte setzen
 - [license](https://docs.npmjs.com/files/package.json#license) - set a licence in your `package.json`
 - [spdx](https://www.npmjs.com/package/spdx) - SPDX License Expression Syntax parser
 
-## no comments in json allowed
+## JSON Comments Workaround
 
 ```json
 // comment not possible
@@ -180,38 +207,13 @@ Badge:
 
 <https://github.com/conventional-changelog/conventional-changelog-cli>
 
-## Setup the Enviroment Variables
+## Resources
 
-- [GitHub Token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/)
-- [npm Token](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules)
+- [dealing with problematic dependencies in a restricted network environment](http://blog.npmjs.org/post/145724408060/dealing-with-problematic-dependencies-in-a)
 
-## Continious Integration
+## Thats all?
 
-- [travis-ci](https://github.com/travis-ci/travis.rb) - Travis CI Client (CLI and Ruby library)
-- [travis encrypt secrets](https://docs.travis-ci.com/user/encryption-keys/)
-- [travis-repository-settings](https://blog.travis-ci.com/2014-03-05-repository-settings/)
-
-## CLI Apps
-
-link your files to run them directly
-
-`{ "bin" : { "mycli" : "./cli.js" } }`
-
-[preferglobal](https://docs.npmjs.com/files/package.json#preferglobal)
-
-`preferglobal: true`
-
-don't forget to set a shebang
-
-`!/usr/bin/env node`
-
-<https://docs.npmjs.com/files/package.json#bin>
-
-## Production Mode
-
-`npm config set -g production false`
-
-With the --production flag (or when the NODE_ENV environment variable is set to production), npm will not install modules listed in devDependencies.
+This documentation is in a very early stage and i will add more information over the time ...
 
 ### Contact / Social Media
 
